@@ -6,13 +6,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Informe o número de jogadores (entre 3 e 6): ");
+        System.out.print("informe o número de jogadores (de 3 a 6): ");
         int numJogadores = scanner.nextInt();
         scanner.nextLine();
+        if (numJogadores<3 || numJogadores>6){
+            System.out.println("o numero de jogadores deve ser maior que 3 e menor que 6");
+            return;
+        }
 
         List<Jogador> jogadores = new ArrayList<>();
         for (int i = 1; i <= numJogadores; i++) {
-            System.out.print("Informe o nome do jogador " + i + ": ");
+            System.out.print("informe o nome do jogador " + i + ": ");
             String nomeJogador = scanner.nextLine();
             jogadores.add(new Jogador(nomeJogador, new ArrayList<>()));
         }
@@ -55,7 +59,7 @@ public class Main {
             tabuleiro.imprimirTabuleiro();
 
             for (Jogador jogador : jogadores) {
-                int linha = 0; // Exemplo de linha a ser coletada, pode ser melhorado
+                int linha = 0; 
                 int pontos = tabuleiro.coletarCartas(linha);
                 jogador.atualizarPontuacao(pontos);
             }
