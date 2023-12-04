@@ -25,7 +25,7 @@ public class Carta {
         return pontos;
     }
 
-    private boolean temDigitosRepetidos(int num) { //chatgpt
+    private boolean temDigitosRepetidos(int num) {
         String numStr = String.valueOf(num);
         return numStr.length() == 2 && numStr.charAt(0) == numStr.charAt(1);
     }
