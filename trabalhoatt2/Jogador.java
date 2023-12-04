@@ -27,7 +27,7 @@ public class Jogador {
         pontuacao += pontos;
     }
 
-    public void removerCartasMao(List<Carta> cartasRemovidas) { //chatgpt
+    public void removerCartasMao(List<Carta> cartasRemovidas) { 
         mao.removeAll(cartasRemovidas); 
     }
 
